@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kalshi Edge Analytics</title>
+<style>
+  :root {
+    --bg: #0b0e14; --panel: #131722; --border: #232838;
+    --text: #e8ebf2; --muted: #9aa3b8;
+    --accent: #3ddc84; --loss: #ff5a6e;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.5;
+  }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 24px 16px 64px; }
+  header.hero { text-align: center; padding: 48px 0 32px; }
+  header.hero h1 { font-size: 2rem; margin: 0 0 12px; }
+  header.hero p { color: var(--muted); font-size: 1.05rem; max-width: 520px; margin: 0 auto 24px; }
+  .cta {
+    display: inline-block; background: var(--accent); color: #06130a;
+    font-weight: 700; text-decoration: none; padding: 14px 28px;
+    border-radius: 10px; font-size: 1.05rem;
+  }
+  section { margin-top: 40px; }
+  section h2 { font-size: 1.3rem; margin-bottom: 8px; }
+  .panel {
+    background: var(--panel); border: 1px solid var(--border);
+    border-radius: 14px; padding: 24px;
+  }
+  .stat-row { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 16px; }
+  .stat-tile {
+    flex: 1 1 140px; background: var(--bg); border: 1px solid var(--border);
+    border-radius: 10px; padding: 16px; text-align: center;
+  }
+  .stat-value { font-size: 1.6rem; font-weight: 700; }
+  .stat-label { color: var(--muted); font-size: 0.82rem; margin-top: 4px; }
+  .transparency-note { color: var(--muted); font-size: 0.9rem; }
+  .table-wrap { overflow-x: auto; max-height: 420px; overflow-y: auto; border: 1px solid var(--border); border-radius: 10px; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+  th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border); white-space: nowrap; }
+  th { position: sticky; top: 0; background: var(--panel); }
+  td.win { color: var(--accent); font-weight: 600; }
+  td.loss { color: var(--loss); font-weight: 600; }
+  .pricing { text-align: center; }
+  .price { font-size: 2.2rem; font-weight: 700; margin: 8px 0 20px; }
+  .empty-state { color: var(--muted); }
+  footer { margin-top: 56px; color: var(--muted); font-size: 0.8rem; text-align: center; }
+  @media (max-width: 480px) {
+    header.hero h1 { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <h1>Kalshi Edge Analytics</h1>
+    <p>Automated scanning of Kalshi event-contract prices against Polymarket,
+       sportsbook odds, and historical settlement data — flagging markets
+       where the price looks out of line with the data.</p>
+    <a class="cta" href="#">Get real-time access — $29/month</a>
+  </header>
+
+  <section>
+    <h2>How it works</h2>
+    <div class="panel">
+      <p>Every scan cross-references live Kalshi prices against outside
+         reference points — Polymarket, sportsbook moneylines and player
+         props, and years of Kalshi's own settled-market history — to
+         estimate a true win probability for each market, then flags the
+         ones where Kalshi's price and that estimate disagree by a
+         meaningful margin. Only markets clearing both a minimum
+         confidence level and a minimum price edge get surfaced.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Track record</h2>
+    <div class="panel">
+      
+        <div class="stat-row">
+          <div class="stat-tile">
+            <div class="stat-value">19/34</div>
+            <div class="stat-label">Correct since 2026-09-25</div>
+          </div>
+          <div class="stat-tile">
+            <div class="stat-value">56%</div>
+            <div class="stat-label">Win rate</div>
+          </div>
+          <div class="stat-tile">
+            <div class="stat-value">+$224</div>
+            <div class="stat-label">Profit on $100/pick (+6.6% ROI)</div>
+          </div>
+        </div>
+        <p class="transparency-note">Every resolved pick is listed below — nothing
+          excluded, wins and losses alike. Sample size grows automatically with
+          every run; a young or small sample is real information too, not
+          something to hide.</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Date</th><th>Market</th><th>Side</th><th>Entry price</th><th>Result</th></tr></thead>
+            <tbody>
+              <tr><td>2026-10-25</td><td>Indiana wins</td><td>YES</td><td>63%</td><td class="win">WIN</td></tr><tr><td>2026-10-24</td><td>San Diego St. wins</td><td>YES</td><td>38%</td><td class="loss">LOSS</td></tr><tr><td>2026-10-24</td><td>Georgia St. wins</td><td>NO</td><td>59%</td><td class="win">WIN</td></tr><tr><td>2026-10-14</td><td>Dallas wins</td><td>NO</td><td>40%</td><td class="win">WIN</td></tr><tr><td>2026-10-14</td><td>Chicago wins</td><td>NO</td><td>57%</td><td class="loss">LOSS</td></tr><tr><td>2026-10-13</td><td>Douglas Da Lapa wins</td><td>NO</td><td>38%</td><td class="loss">LOSS</td></tr><tr><td>2026-10-10</td><td>Houston wins</td><td>YES</td><td>53%</td><td class="loss">LOSS</td></tr><tr><td>2026-10-10</td><td>Minnesota wins</td><td>NO</td><td>43%</td><td class="loss">LOSS</td></tr><tr><td>2026-10-10</td><td>Pittsburgh wins</td><td>YES</td><td>34%</td><td class="loss">LOSS</td></tr><tr><td>2026-10-09</td><td>Houston wins</td><td>YES</td><td>48%</td><td class="win">WIN</td></tr><tr><td>2026-10-08</td><td>Jacksonville St. wins</td><td>NO</td><td>66%</td><td class="loss">LOSS</td></tr><tr><td>2026-10-07</td><td>Charlotte wins</td><td>YES</td><td>32%</td><td class="loss">LOSS</td></tr><tr><td>2026-10-04</td><td>Atlanta wins</td><td>YES</td><td>45%</td><td class="win">WIN</td></tr><tr><td>2026-10-04</td><td>New England wins</td><td>NO</td><td>49%</td><td class="loss">LOSS</td></tr><tr><td>2026-10-03</td><td>Northwestern wins</td><td>YES</td><td>65%</td><td class="win">WIN</td></tr><tr><td>2026-10-03</td><td>Pittsburgh wins</td><td>YES</td><td>31%</td><td class="win">WIN</td></tr><tr><td>2026-10-03</td><td>Air Force wins</td><td>YES</td><td>82%</td><td class="win">WIN</td></tr><tr><td>2026-10-03</td><td>Minnesota wins</td><td>YES</td><td>68%</td><td class="win">WIN</td></tr><tr><td>2026-10-03</td><td>UCF wins</td><td>NO</td><td>82%</td><td class="win">WIN</td></tr><tr><td>2026-10-03</td><td>Toledo wins</td><td>YES</td><td>81%</td><td class="win">WIN</td></tr><tr><td>2026-10-03</td><td>Iowa St. wins</td><td>YES</td><td>37%</td><td class="win">WIN</td></tr><tr><td>2026-10-03</td><td>Buffalo wins</td><td>YES</td><td>44%</td><td class="loss">LOSS</td></tr><tr><td>2026-10-03</td><td>Syracuse wins</td><td>YES</td><td>45%</td><td class="win">WIN</td></tr><tr><td>2026-10-03</td><td>Kent St. wins</td><td>YES</td><td>38%</td><td class="loss">LOSS</td></tr><tr><td>2026-10-03</td><td>Old Dominion wins</td><td>YES</td><td>46%</td><td class="loss">LOSS</td></tr><tr><td>2026-10-03</td><td>UNLV wins</td><td>YES</td><td>51%</td><td class="win">WIN</td></tr><tr><td>2026-10-02</td><td>New Mexico St. wins</td><td>YES</td><td>74%</td><td class="win">WIN</td></tr><tr><td>2026-10-02</td><td>Pittsburgh wins</td><td>NO</td><td>38%</td><td class="win">WIN</td></tr><tr><td>2026-10-02</td><td>Indiana wins</td><td>YES</td><td>39%</td><td class="loss">LOSS</td></tr><tr><td>2026-10-01</td><td>Washington wins</td><td>NO</td><td>81%</td><td class="win">WIN</td></tr><tr><td>2026-09-30</td><td>Will Franklin Arias play in a game for any team in the MLB before Oct 1, 2026?</td><td>YES</td><td>3%</td><td class="loss">LOSS</td></tr><tr><td>2026-09-30</td><td>Minnesota wins</td><td>NO</td><td>40%</td><td class="win">WIN</td></tr><tr><td>2026-09-26</td><td>UTSA wins</td><td>YES</td><td>61%</td><td class="win">WIN</td></tr><tr><td>2026-09-25</td><td>Temple wins</td><td>YES</td><td>38%</td><td class="loss">LOSS</td></tr>
+            </tbody>
+          </table>
+        </div>
+        
+    </div>
+  </section>
+
+  <section class="pricing">
+    <h2>Pricing</h2>
+    <div class="panel">
+      <div class="price">$29/month</div>
+      <a class="cta" href="#">Subscribe</a>
+    </div>
+  </section>
+
+  <footer>
+    Not financial advice. Kalshi event contracts carry real risk of loss —
+    size any position with money you can afford to lose, and verify the
+    reasoning yourself before trading. Past results do not guarantee future
+    performance. Page last updated 2026-10-26 10:32 UTC.
+  </footer>
+
+</div>
+</body>
+</html>
